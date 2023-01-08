@@ -154,7 +154,7 @@ jobs:
       - name: Patches.
         run: |
           cd $LibrariesPath
-          git clone --depth=1 $GIT/desktop-app/patches.git
+          git clone --depth=1 -b gyp $GIT/desktop-app/patches.git
 
       - name: Rnnoise.
         run: |
