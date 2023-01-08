@@ -362,7 +362,7 @@ jobs:
         run: |
           cd $LibrariesPath
 
-          git clone -b v6.2.4 --depth=1 https://github.com/qt/qt5.git
+          git clone -b v6.2.4 --depth=1 https://github.com/qt/qt5.git qt_${QT}
           cd qt_${QT}
           perl init-repository --module-subset=qtbase,qtwayland,qtimageformats,qtsvg,qt5compat,qttools
           cd qtbase
