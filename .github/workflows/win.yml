@@ -1,6 +1,11 @@
 name: Windows.
 
 on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Release Tag'
+        required: false
   push:
     paths-ignore:
       - 'docs/**'
