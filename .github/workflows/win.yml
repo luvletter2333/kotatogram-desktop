@@ -182,7 +182,12 @@ jobs:
         if: env.UPLOAD_ARTIFACT == 'true'
         run: |
           mkdir artifact
-          move %TBUILD%\%REPO_NAME%\out\Debug\Kotatogram.exe artifact/
+          if "${{ matrix.arch }}" == "x64" (
+            move %TBUILD%\%REPO_NAME%\out64\Debug\Kotatogram.exe artifact/
+          ) else (
+            move %TBUILD%\%REPO_NAME%\out\Debug\Kotatogram.exe artifact/
+          )
+
       - uses: actions/upload-artifact@master
         name: Upload artifact.
         if: env.UPLOAD_ARTIFACT == 'true'
